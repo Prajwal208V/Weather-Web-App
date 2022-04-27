@@ -21,10 +21,12 @@ function fun(para1){
         cloud.textContent=`clouds: ${data.clouds.all} %`
     });
 }
+(()=>{
+    fun('Bengaluru');
+})();
 inp.addEventListener('keyup', function(e) {
     if(e.keyCode===13){
       console.log(inp.value);
       fun(inp.value);
     }
 });
-
