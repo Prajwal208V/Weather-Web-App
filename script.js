@@ -10,7 +10,7 @@ function fun(para1){
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${para1}&appid=d3b6aaa7c8ae98a5395f93b296e793d1`)
     .then(res=> {
         if(!res.ok){
-            throw res.json();
+            throw res;
         }
         return res.json()
     })
@@ -24,9 +24,7 @@ function fun(para1){
         cloud.textContent=`clouds: ${data.clouds.all} %`
     })
     .catch(err=>{
-        err.then((data)=>{
-            alert(data.message);
-        })
+       alert('city not found');
     })
     
 }
